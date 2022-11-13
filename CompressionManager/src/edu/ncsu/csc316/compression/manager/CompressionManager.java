@@ -56,18 +56,21 @@ public class CompressionManager {
 		// holds the integer of duplicate words
 		Integer temp;
 		
-		Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
+		//Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
+		/*
 		for (Entry<Integer, List<String>> e : map.entrySet()) {
 			sorter.put(e.getKey(), e.getValue());
 		}
+		*/
 
-		for (Entry<Integer, List<String>> e : sorter.entrySet()) {
+		for (Entry<Integer, List<String>> e : map.entrySet()) {
 			// holds a list of words in the input map
 			List<String> wordList = e.getValue();
 			List<String> outputList = DSAFactory.getIndexedList();
 
 			// process each list of words in the map
-			for (int i = 0; i < wordList.size(); ++i) {
+			int size = wordList.size();
+			for (int i = 0; i < size; ++i) {
 				temp = dictionary.get(wordList.get(i));
 				// word is found in dictionary
 				if (temp != null) {
