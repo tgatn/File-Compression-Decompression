@@ -11,7 +11,9 @@ import edu.ncsu.csc316.dsa.map.Map;
 import edu.ncsu.csc316.dsa.map.Map.Entry;
 
 /**
- * CompressionManager class holds methods to compress and decompress a given file
+ * CompressionManager class holds methods to compress and decompress a given
+ * file
+ * 
  * @author TungTran
  *
  */
@@ -21,7 +23,9 @@ public class CompressionManager {
 	private Map<Integer, List<String>> map;
 
 	/**
-	 * Constructor of CompressionManager that sets a certain map, list and sorter type
+	 * Constructor of CompressionManager that sets a certain map, list and sorter
+	 * type
+	 * 
 	 * @param pathToInputFile input file to be compressed or decompressed
 	 * @throws FileNotFoundException if file does not exist
 	 */
@@ -37,15 +41,14 @@ public class CompressionManager {
 
 	/**
 	 * Compresses a given input file
+	 * 
 	 * @return the compressed input file in a map
 	 */
 	public Map<Integer, List<String>> getCompressed() {
 //		DSAFactory.setMapType(DataStructure.SKIPLIST);
 //		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
 		// holds unique words in the inputMap
-		
-		
-		
+
 		Map<String, Integer> dictionary = DSAFactory.getMap(null);
 
 		// index of dictionary
@@ -55,15 +58,17 @@ public class CompressionManager {
 
 		// holds the integer of duplicate words
 		Integer temp;
-		
-		//Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
-		/*
-		for (Entry<Integer, List<String>> e : map.entrySet()) {
-			sorter.put(e.getKey(), e.getValue());
-		}
-		*/
 
-		for (Entry<Integer, List<String>> e : map.entrySet()) {
+		// Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
+		/*
+		 * for (Entry<Integer, List<String>> e : map.entrySet()) {
+		 * sorter.put(e.getKey(), e.getValue()); }
+		 */
+
+		// iterates through the input map
+		Iterable<Entry<Integer, List<String>>> E = map.entrySet();
+
+		for (Entry<Integer, List<String>> e : E) {
 			// holds a list of words in the input map
 			List<String> wordList = e.getValue();
 			List<String> outputList = DSAFactory.getIndexedList();
@@ -82,12 +87,13 @@ public class CompressionManager {
 			}
 			compressedMap.put(e.getKey(), outputList);
 		}
-		
+
 		return compressedMap;
 	}
 
 	/**
 	 * Decompresses a given input file
+	 * 
 	 * @return the decompressed input file in a map
 	 */
 	public Map<Integer, List<String>> getDecompressed() {
@@ -115,8 +121,8 @@ public class CompressionManager {
 //		for (Entry<Integer, List<String>> e : E) {
 //			sorter.put(e.getKey(), e.getValue());
 //		}
-		
-		for (Entry<Integer, List<String>> e : map.entrySet()) {
+
+		for (Entry<Integer, List<String>> e : E) {
 			// holds a list of words in the input map
 			List<String> wordList = e.getValue();
 			List<String> outputList = DSAFactory.getIndexedList();
