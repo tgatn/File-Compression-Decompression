@@ -40,8 +40,8 @@ public class CompressionManager {
 	 * @return the compressed input file in a map
 	 */
 	public Map<Integer, List<String>> getCompressed() {
-		DSAFactory.setMapType(DataStructure.SKIPLIST);
-		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
+//		DSAFactory.setMapType(DataStructure.SKIPLIST);
+//		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
 		// holds unique words in the inputMap
 		Map<String, Integer> dictionary = DSAFactory.getMap(null);
 
@@ -91,9 +91,9 @@ public class CompressionManager {
 		// if a word in the input map matches a word in dictionary
 		// add the word instead of the number
 		// else just add that word
-
-		DSAFactory.setMapType(DataStructure.SKIPLIST);
-		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
+//
+//		DSAFactory.setMapType(DataStructure.SKIPLIST);
+//		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
 		// holds unique words in the inputMap
 		Map<Integer, String> dictionary = DSAFactory.getMap(null);
 
