@@ -50,7 +50,7 @@ public class ReportManager {
 		buf.append("Compressed Output {\n");
 		int count = 1;
 		for (Entry<Integer, List<String>> e : compressedMap.entrySet()) {
-			buf.append(INDENT + "Line " + count++ + ": ");
+			buf.append(INDENT + "Line " + count++ + ":");
 			for (int i = 0; i < e.getValue().size(); ++i) {
 				buf.append(e.getValue().get(i));
 				if (i != e.getValue().size() - 1) {
@@ -72,13 +72,13 @@ public class ReportManager {
     	Map<Integer, List<String>> decompressedMap = DSAFactory.getMap(null);
         decompressedMap = manager.getDecompressed();
         if (decompressedMap.size() == 0) {
-        	return "The provided input file has no text to compress.";
+        	return "The provided input file has no text to decompress.";
         }
         StringBuffer buf = new StringBuffer();
         buf.append("Decompressed Output {\n");
         int count = 1;
 		for (Entry<Integer, List<String>> e : decompressedMap.entrySet()) {
-			buf.append(INDENT + "Line " + count++ + ": ");
+			buf.append(INDENT + "Line " + count++ + ":");
 			for (int i = 0; i < e.getValue().size(); ++i) {
 				buf.append(e.getValue().get(i));
 				if (i != e.getValue().size() - 1) {
