@@ -111,12 +111,12 @@ public class CompressionManager {
 
 		Map<Integer, List<String>> decompressedMap = DSAFactory.getMap(null);
 
-		Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
-		for (Entry<Integer, List<String>> e : E) {
-			sorter.put(e.getKey(), e.getValue());
-		}
+//		Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
+//		for (Entry<Integer, List<String>> e : E) {
+//			sorter.put(e.getKey(), e.getValue());
+//		}
 		
-		for (Entry<Integer, List<String>> e : sorter.entrySet()) {
+		for (Entry<Integer, List<String>> e : map.entrySet()) {
 			// holds a list of words in the input map
 			List<String> wordList = e.getValue();
 			List<String> outputList = DSAFactory.getIndexedList();
