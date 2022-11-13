@@ -54,8 +54,8 @@ public class ReportManager {
 		int count = 1;
 
 		// iterates through the input map
-		Iterable<Entry<Integer, List<String>>> E = compressedMap.entrySet();
-		for (Entry<Integer, List<String>> e : E) {
+		Iterable<Entry<Integer, List<String>>> entrySet = compressedMap.entrySet();
+		for (Entry<Integer, List<String>> e : entrySet) {
 			buf.append(INDENT + "Line " + count++ + ":");
 			for (int i = 0; i < e.getValue().size(); ++i) {
 				buf.append(e.getValue().get(i));
@@ -86,8 +86,8 @@ public class ReportManager {
 		int count = 1;
 		
 		// iterates through the input map
-		Iterable<Entry<Integer, List<String>>> E = decompressedMap.entrySet();
-		for (Entry<Integer, List<String>> e : E) {
+		Iterable<Entry<Integer, List<String>>> entrySet = decompressedMap.entrySet();
+		for (Entry<Integer, List<String>> e : entrySet) {
 			buf.append(INDENT + "Line " + count++ + ":");
 			for (int i = 0; i < e.getValue().size(); ++i) {
 				buf.append(e.getValue().get(i));

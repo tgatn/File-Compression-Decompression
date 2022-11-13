@@ -3,6 +3,8 @@ package edu.ncsu.csc316.compression.ui;
 
 /**
  * CompressionManager UI that users will interact with
+ * 
+ * @author Tung Tran
  */
 public class CompressionManagerUI {
 

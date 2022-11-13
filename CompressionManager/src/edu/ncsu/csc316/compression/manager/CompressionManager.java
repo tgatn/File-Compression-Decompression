@@ -66,9 +66,9 @@ public class CompressionManager {
 		 */
 
 		// iterates through the input map
-		Iterable<Entry<Integer, List<String>>> E = map.entrySet();
+		Iterable<Entry<Integer, List<String>>> entrySet = map.entrySet();
 
-		for (Entry<Integer, List<String>> e : E) {
+		for (Entry<Integer, List<String>> e : entrySet) {
 			// holds a list of words in the input map
 			List<String> wordList = e.getValue();
 			List<String> outputList = DSAFactory.getIndexedList();
@@ -113,7 +113,7 @@ public class CompressionManager {
 		int dictionaryIdx = 1;
 
 		// iterates through the input map
-		Iterable<Entry<Integer, List<String>>> E = map.entrySet();
+		Iterable<Entry<Integer, List<String>>> entrySet = map.entrySet();
 
 		Map<Integer, List<String>> decompressedMap = DSAFactory.getMap(null);
 
@@ -122,7 +122,7 @@ public class CompressionManager {
 //			sorter.put(e.getKey(), e.getValue());
 //		}
 
-		for (Entry<Integer, List<String>> e : E) {
+		for (Entry<Integer, List<String>> e : entrySet) {
 			// holds a list of words in the input map
 			List<String> wordList = e.getValue();
 			List<String> outputList = DSAFactory.getIndexedList();
