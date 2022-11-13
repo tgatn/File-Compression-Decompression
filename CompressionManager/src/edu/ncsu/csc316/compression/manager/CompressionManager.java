@@ -43,6 +43,9 @@ public class CompressionManager {
 //		DSAFactory.setMapType(DataStructure.SKIPLIST);
 //		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
 		// holds unique words in the inputMap
+		
+		
+		
 		Map<String, Integer> dictionary = DSAFactory.getMap(null);
 
 		// index of dictionary

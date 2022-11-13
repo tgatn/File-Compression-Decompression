@@ -38,7 +38,13 @@ public class ReportManager {
     	Map<Integer, List<String>> compressedMap = DSAFactory.getMap(null);
 //    	DSAFactory.setMapType(DataStructure.SKIPLIST);
 //		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
+    	
+    	
         compressedMap = manager.getCompressed();
+        
+        if (compressedMap.size() == 0) {
+        	return "The provided input file has no text to compress.";
+        }
         
         StringBuilder buf = new StringBuilder();
 		buf.append("Compressed Output {\n");
@@ -65,7 +71,9 @@ public class ReportManager {
     public String decompress() {
     	Map<Integer, List<String>> decompressedMap = DSAFactory.getMap(null);
         decompressedMap = manager.getDecompressed();
-		
+        if (decompressedMap.size() == 0) {
+        	return "The provided input file has no text to compress.";
+        }
         StringBuffer buf = new StringBuffer();
         buf.append("Decompressed Output {\n");
         int count = 1;
