@@ -122,7 +122,8 @@ public class CompressionManager {
 			List<String> outputList = DSAFactory.getIndexedList();
 
 			// process each list of words in the map
-			for (int i = 0; i < wordList.size(); ++i) {
+			int size = wordList.size();
+			for (int i = 0; i < size; ++i) {
 
 				try { // word is a number
 					int compressWord = Integer.parseInt(wordList.get(i));
@@ -132,7 +133,6 @@ public class CompressionManager {
 					outputList.addLast(wordList.get(i));
 				}
 			}
-			System.out.println(dictionary.get(19));
 			decompressedMap.put(e.getKey(), outputList);
 		}
 
