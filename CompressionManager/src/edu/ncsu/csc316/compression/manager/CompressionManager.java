@@ -45,10 +45,8 @@ public class CompressionManager {
 	 * @return the compressed input file in a map
 	 */
 	public Map<Integer, List<String>> getCompressed() {
-//		DSAFactory.setMapType(DataStructure.SKIPLIST);
-//		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
-		// holds unique words in the inputMap
 
+		// holds unique words in the inputMap
 		Map<String, Integer> dictionary = DSAFactory.getMap(null);
 
 		// index of dictionary
@@ -58,12 +56,6 @@ public class CompressionManager {
 
 		// holds the integer of duplicate words
 		Integer temp;
-
-		// Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
-		/*
-		 * for (Entry<Integer, List<String>> e : map.entrySet()) {
-		 * sorter.put(e.getKey(), e.getValue()); }
-		 */
 
 		// iterates through the input map
 		Iterable<Entry<Integer, List<String>>> entrySet = map.entrySet();
@@ -97,15 +89,6 @@ public class CompressionManager {
 	 * @return the decompressed input file in a map
 	 */
 	public Map<Integer, List<String>> getDecompressed() {
-		// dictionary to hold words and their associated value
-		// iterate through the each entry in input map
-		// iterate through each word in input map
-		// if a word in the input map matches a word in dictionary
-		// add the word instead of the number
-		// else just add that word
-//
-//		DSAFactory.setMapType(DataStructure.SKIPLIST);
-//		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
 		// holds unique words in the inputMap
 		Map<Integer, String> dictionary = DSAFactory.getMap(null);
 
@@ -116,11 +99,6 @@ public class CompressionManager {
 		Iterable<Entry<Integer, List<String>>> entrySet = map.entrySet();
 
 		Map<Integer, List<String>> decompressedMap = DSAFactory.getMap(null);
-
-//		Map<Integer, List<String>> sorter = DSAFactory.getMap(null);
-//		for (Entry<Integer, List<String>> e : E) {
-//			sorter.put(e.getKey(), e.getValue());
-//		}
 
 		for (Entry<Integer, List<String>> e : entrySet) {
 			// holds a list of words in the input map

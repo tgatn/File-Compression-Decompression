@@ -40,9 +40,7 @@ public class ReportManager {
 	 */
 	public String compress() {
 		Map<Integer, List<String>> compressedMap = DSAFactory.getMap(null);
-//    	DSAFactory.setMapType(DataStructure.SKIPLIST);
-//		DSAFactory.setListType(DataStructure.ARRAYBASEDLIST);
-
+		
 		compressedMap = manager.getCompressed();
 
 		if (compressedMap.size() == 0) {
