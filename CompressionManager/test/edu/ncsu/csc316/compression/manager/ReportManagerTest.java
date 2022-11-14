@@ -16,9 +16,19 @@ class ReportManagerTest {
 	@Test
 	void testCompress() {
 		
+		
 		/** Valid test file */
 		String validTestFile = "input/sampleCompress.txt";
 		ReportManager manager = null;
+		
+		try {
+			manager = new ReportManager("input/empty.txt");
+		} catch (FileNotFoundException e) {
+			assertEquals("", e.getMessage());
+		}
+		
+		assertEquals("The provided input file has no text to compress.", manager.compress());
+		
 		try {
 			manager = new ReportManager(validTestFile);
 		} catch (FileNotFoundException e) {
@@ -39,6 +49,15 @@ class ReportManagerTest {
 		/** Valid test file */
 		String validTestFile = "input/sampleDecompress.txt";
 		ReportManager manager = null;
+		
+		try {
+			manager = new ReportManager("input/empty.txt");
+		} catch (FileNotFoundException e) {
+			assertEquals("", e.getMessage());
+		}
+		
+		assertEquals("The provided input file has no text to decompress.", manager.decompress());
+		
 		try {
 			manager = new ReportManager(validTestFile);
 		} catch (FileNotFoundException e) {
